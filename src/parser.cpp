@@ -15,11 +15,11 @@ class Parser{
 
         int parse_line(std::string& line, int line_number, bool isFile){
             if (line == "ban" && isFile == false){
-                printf("\nCSL 1.0\n")
+                printf("\nCSL 1.0\n");
             }
         }
 
-        int parse(){
+        int parse(std::string line=nullptr, int lineco){
             if (ParserSettings.isFile) {
                 std::ifstream file(ParserSettings.filepath);
                 if (!file.is_open()){
@@ -33,6 +33,8 @@ class Parser{
                     i +=1;
                     parse_line(line, i, true);
                 }
-            } 
+            } else {
+                parse_line(line, lineco, false);
+            }
         }
 };
