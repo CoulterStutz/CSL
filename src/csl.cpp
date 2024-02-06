@@ -10,6 +10,9 @@ int main(int argc, char* argv[]){
             printf("CSL>>: ");
             std::cin >> cmd;
         }
+    } else if (argc == 2)
+    {
+        
     }
     return 0;
 }
