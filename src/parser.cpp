@@ -13,10 +13,12 @@ class Parser{
     public:
         parserSettings ParserSettings;
 
-        int parse_line(std::string& line, int line_number, std::ifstream& file_path){
-
+        int parse_line(std::string& line, int line_number, bool isFile){
+            if (line == "ban" && isFile == false){
+                printf("\nCSL 1.0\n")
+            }
         }
-    
+
         int parse(){
             if (ParserSettings.isFile) {
                 std::ifstream file(ParserSettings.filepath);
@@ -29,7 +31,7 @@ class Parser{
                 int i = 0;
                 while (std::getline(file, line)) {
                     i +=1;
-                    parse_line(line, i, file);
+                    parse_line(line, i, true);
                 }
             } 
         }
